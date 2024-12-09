@@ -7,7 +7,7 @@ const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
 // IMPORTANT: import the file that you call Builder.registerComponent
 // anywhere you have <BuilderComponent />
 Builder.registerComponent(
-  dynamic(() => import('./components/heading.jsx')),
+  dynamic(() => import('../components/heading.jsx')),
   {
     name: 'Heading',
     inputs: [{ name: 'title', type: 'text' }],
