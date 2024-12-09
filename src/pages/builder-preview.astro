@@ -1,13 +1,15 @@
 ---
-import { Builder, BuilderComponent } from '@builder.io/react'
+import pkg  from '@builder.io/react'
 
 const builderAPIpublicKey = import.meta.env.BUILDER_API_PUBLIC_KEY;
 const builderModel = import.meta.env.BUILDER_BLOGPOST_MODEL;
 
+const { Builder, BuilderComponent } = pkg;
+
 // IMPORTANT: import the file that you call Builder.registerComponent
 // anywhere you have <BuilderComponent />
 Builder.registerComponent(
-  dynamic(() => import('../components/heading.jsx')),
+  () => import('../components/heading.jsx'),
   {
     name: 'Heading',
     inputs: [{ name: 'title', type: 'text' }],
